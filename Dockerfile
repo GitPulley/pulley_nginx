@@ -8,4 +8,4 @@ RUN rm /etc/nginx/nginx.conf /etc/php5/fpm/php-fpm.conf
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD php-fpm.conf /etc/php5/fpm/php-fpm.conf
 
-RUN service php-fpm restart
+ENTRYPOINT ["/usr/sbin/php-fpm", "-F"]

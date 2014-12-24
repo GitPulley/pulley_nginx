@@ -8,4 +8,4 @@ RUN rm /etc/nginx/nginx.conf /etc/php5/fpm/php-fpm.conf
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD php-fpm.conf /etc/php5/fpm/php-fpm.conf
 
-ENTRYPOINT ["/usr/sbin/php-fpm", "-F"]
+CMD service php5-fpm start && nginx -g `daemon off`

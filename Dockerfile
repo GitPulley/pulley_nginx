@@ -5,7 +5,7 @@ RUN apt-get install -y php5-cli php5-curl php5-fpm php5-gd php5-mcrypt php5-mysq
 
 RUN rm /etc/nginx/nginx.conf /etc/php5/fpm/php-fpm.conf
 
-ADD /etc/nginx/nginx.conf nginx.conf
-ADD /etc/php/fpm/php-fpm.conf php-fpm.conf
+ADD nginx.conf /etc/nginx/nginx.conf
+ADD php-fpm.conf /etc/php5/fpm/php-fpm.conf
 
 RUN service php-frm restart
